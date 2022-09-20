@@ -6,13 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wishlistRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edit_item_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="Item Name"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="599dp" />
+
+            <EditText
+                android:id="@+id/edit_amount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+
+                android:hint="Ex: 5.99"
+                android:inputType="number"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="315dp"
+                tools:layout_editor_absoluteY="616dp" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edit_URL"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="Ex: https://example.com"
+                android:textSize="12sp"
+                tools:layout_editor_absoluteY="678dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:text="Submit"
+                tools:layout_editor_absoluteX="305dp"
+                tools:layout_editor_absoluteY="667dp" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
