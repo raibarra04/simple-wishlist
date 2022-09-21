@@ -30,12 +30,17 @@ class MainActivity : AppCompatActivity() {
         // Set onClick listener for new item submit
         findViewById<Button>(R.id.submit_item).setOnClickListener{
             // Retrieve new wishlist item values
-            val itemName = itemName.text.toString()
-            val itemUrl = itemUrl.text.toString()
-            val itemAmount = itemAmount.text.toString()
+            val itemNameInp = itemName.text.toString()
+            val itemUrlInp = itemUrl.text.toString()
+            val itemAmountInp = itemAmount.text.toString()
 
             // store in ListItem to append to our mutable list and our listItems List
-            val item = ListItem(itemName, itemUrl, itemAmount)
+            val item = ListItem(itemNameInp, itemUrlInp, itemAmountInp)
+            // clear user inputs
+            itemName.text.clear()
+            itemUrl.text.clear()
+            itemAmount.text.clear()
+
             wishlistItems.add(item)
             listItems = wishlistItems
 
